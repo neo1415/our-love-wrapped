@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import useStoryStore from '@/lib/state/storyStore';
 import { loadContent } from '@/lib/content/contentLoader';
 import { AudioManager } from '@/lib/audio/AudioManager';
@@ -75,21 +75,22 @@ export default function StoryContainer() {
     audioManagerRef.current.onTimeUpdate((time) => {
       setCurrentAudioTime(time);
 
+      // DISABLED: Fast slideshow feature
       // Check if we're on song 3 (track index 2) and reached 1:53 (113 seconds)
-      if (currentTrack === 2 && !showFastSlideshow && !showILoveYou) {
-        // Trigger fast slideshow at 1:53 (113 seconds)
-        if (time >= 113 && time < 113.5) {
-          console.log('Triggering fast slideshow at 1:53');
-          setShowFastSlideshow(true);
-        }
-      }
+      // if (currentTrack === 2 && !showFastSlideshow && !showILoveYou) {
+      //   // Trigger fast slideshow at 1:53 (113 seconds)
+      //   if (time >= 113 && time < 113.5) {
+      //     console.log('Triggering fast slideshow at 1:53');
+      //     setShowFastSlideshow(true);
+      //   }
+      // }
 
       // Show "I Love You" at 2:20 (140 seconds) - ONLY trigger once
-      if (currentTrack === 2 && showFastSlideshow && !showILoveYou) {
+      // UPDATED: Trigger directly without fast slideshow
+      if (currentTrack === 2 && !showILoveYou) {
         if (time >= 140 && time < 140.5) {
           console.log('🎵 TIME 2:20 REACHED - TRIGGERING I LOVE YOU');
           console.log('Current state before trigger:', { showFastSlideshow, showILoveYou, currentTrack, time });
-          setShowFastSlideshow(false);
           setShowILoveYou(true);
           console.log('✅ I LOVE YOU STATE SET TO TRUE');
         }
@@ -424,17 +425,18 @@ export default function StoryContainer() {
     );
   }
 
+  // DISABLED: Fast slideshow feature
   // Show fast slideshow at 1:53
-  if (showFastSlideshow) {
-    return (
-      <FastSlideshow
-        photos={allPhotos.current}
-        onComplete={handleFastSlideshowComplete}
-        startTime={113}
-        currentTime={currentAudioTime}
-      />
-    );
-  }
+  // if (showFastSlideshow) {
+  //   return (
+  //     <FastSlideshow
+  //       photos={allPhotos.current}
+  //       onComplete={handleFastSlideshowComplete}
+  //       startTime={113}
+  //       currentTime={currentAudioTime}
+  //     />
+  //   );
+  // }
 
   // Show video transition
   if (showVideoTransition) {
@@ -462,50 +464,52 @@ export default function StoryContainer() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Render current slide with section crossfade */}
-      <motion.div
-        key={`section-${currentSection}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1.2, ease: 'easeInOut' }}
-        className="flex min-h-screen items-center justify-center"
-      >
-        {slideData.type === 'text' && (
-          <TextSlide
-            lines={slideData.parsedLines || []}
-            onComplete={handleSlideComplete}
-            isPlaying={isPlaying}
-            special={slideData.special}
-            backgroundPhoto={slideData.backgroundPhoto}
-            iceCreamCode={content.config.iceCreamCode}
-          />
-        )}
+      {/* Render current slide with proper keying for transitions */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`section-${currentSection}-slide-${currentSlide}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          className="flex min-h-screen items-center justify-center"
+        >
+          {slideData.type === 'text' && (
+            <TextSlide
+              lines={slideData.parsedLines || []}
+              onComplete={handleSlideComplete}
+              isPlaying={isPlaying}
+              special={slideData.special}
+              backgroundPhoto={slideData.backgroundPhoto}
+              iceCreamCode={content.config.iceCreamCode}
+            />
+          )}
 
-        {slideData.type === 'photo' && (
-          <PhotoSlide
-            src={slideData.content}
-            alt={slideData.altText || 'Love story photo'}
-            onComplete={handleSlideComplete}
-            onDoubleTap={(x, y) => {
-              // Heart animation handled in PhotoSlide
-            }}
-            onLongPress={() => {
-              // Full-screen handled in PhotoSlide
-            }}
-            isPlaying={isPlaying}
-          />
-        )}
+          {slideData.type === 'photo' && (
+            <PhotoSlide
+              src={slideData.content}
+              alt={slideData.altText || 'Love story photo'}
+              onComplete={handleSlideComplete}
+              onDoubleTap={(x, y) => {
+                // Heart animation handled in PhotoSlide
+              }}
+              onLongPress={() => {
+                // Full-screen handled in PhotoSlide
+              }}
+              isPlaying={isPlaying}
+            />
+          )}
 
-        {slideData.type === 'collage' && slideData.photos && (
-          <PhotoCollage
-            photos={slideData.photos}
-            layout={slideData.layout}
-            onComplete={handleSlideComplete}
-            isPlaying={isPlaying}
-          />
-        )}
-      </motion.div>
+          {slideData.type === 'collage' && slideData.photos && (
+            <PhotoCollage
+              photos={slideData.photos}
+              layout={slideData.layout}
+              onComplete={handleSlideComplete}
+              isPlaying={isPlaying}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
 
       {/* ARIA live region for slide changes */}
       <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">

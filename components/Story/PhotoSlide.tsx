@@ -113,15 +113,20 @@ export default function PhotoSlide({
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
-          animate={{ opacity: 1, scale: 1.08, rotateY: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? 1 : 1.08, 
+            rotateY: 0 
+          }}
           transition={{
             opacity: { duration: 1, ease: 'easeOut' },
             scale: { duration: 8, ease: 'linear' },
             rotateY: { duration: 1, ease: 'easeOut' },
           }}
-          className="relative max-h-[85vh] w-full max-w-4xl overflow-hidden rounded-2xl shadow-2xl md:max-h-[75vh]"
+          className="relative w-full overflow-hidden rounded-2xl shadow-2xl md:max-w-4xl"
           style={{
             boxShadow: '0 0 60px rgba(183, 110, 121, 0.4)',
+            maxHeight: typeof window !== 'undefined' && window.innerWidth >= 768 ? '80vh' : '85vh',
           }}
           onClick={handleTap}
           onTouchStart={handlePressStart}
@@ -140,7 +145,7 @@ export default function PhotoSlide({
             onLoad={() => {
               console.log(`✅ PHOTO LOADED SUCCESSFULLY: ${src}`);
             }}
-            className="h-full w-full object-contain"
+            className="w-full object-cover md:h-auto md:max-h-[80vh] md:object-contain"
             style={{
               filter: 'brightness(0.95) contrast(1.05)',
               objectPosition: 'top center',

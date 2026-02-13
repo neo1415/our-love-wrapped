@@ -57,7 +57,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
+            className="relative h-[60vh] md:max-h-[65vh] w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
           >
             {imageErrors[0] ? (
               <div className="flex h-full w-full items-center justify-center bg-burgundy/20">
@@ -69,7 +69,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                 alt={photos[0].alt}
                 onError={() => handleImageError(0)}
                 onLoad={() => handleImageLoad(0)}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover md:h-auto md:max-h-[65vh] md:object-contain"
                 style={{
                   objectPosition: photos[0].focalPoint || 'top center',
                 }}
@@ -133,7 +133,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="relative h-[70vh] md:h-[80vh] w-full max-w-4xl">
+        <div className="relative h-[70vh] md:max-h-[75vh] w-full max-w-4xl">
           {photos.slice(0, 4).map((photo, index) => (
             <motion.div
               key={`${photo.src}-${index}`}
@@ -149,7 +149,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                 type: 'spring',
                 stiffness: 100,
               }}
-              className={`absolute ${mobilePositions[index]} ${desktopPositions[index]} h-56 w-44 md:h-72 md:w-56 bg-cream p-2 md:p-3 shadow-2xl`}
+              className={`absolute ${mobilePositions[index]} ${desktopPositions[index]} h-56 w-44 md:h-64 md:w-48 bg-cream p-2 md:p-3 shadow-2xl`}
               style={{
                 boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
               }}
@@ -189,7 +189,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="grid w-full max-w-5xl grid-cols-2 gap-2 md:gap-4">
+        <div className="grid w-full grid-cols-2 gap-2 md:gap-4">
           {photos.slice(0, 2).map((photo, index) => (
             <motion.div
               key={`${photo.src}-${index}`}
@@ -197,9 +197,6 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
-              style={{
-                aspectRatio: '3/4',
-              }}
             >
               {imageErrors[index] ? (
                 <div className="flex h-full w-full items-center justify-center bg-burgundy/20">
@@ -211,9 +208,10 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                   alt={photo.alt}
                   onError={() => handleImageError(index)}
                   onLoad={() => handleImageLoad(index)}
-                  className="h-full w-full object-cover"
+                  className="w-full object-cover md:max-h-[70vh] md:object-contain"
                   style={{
                     objectPosition: photo.focalPoint || 'top center',
+                    aspectRatio: '3/4',
                   }}
                 />
               )}
@@ -286,7 +284,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="grid w-full max-w-5xl grid-cols-3 gap-1">
+        <div className="grid w-full grid-cols-3 gap-1">
           {photos.slice(0, 3).map((photo, index) => (
             <motion.div
               key={`${photo.src}-${index}`}
@@ -294,9 +292,6 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
               className="relative overflow-hidden border border-rose-gold/30 shadow-2xl"
-              style={{
-                aspectRatio: '2/3',
-              }}
             >
               {imageErrors[index] ? (
                 <div className="flex h-full w-full items-center justify-center bg-burgundy/20">
@@ -308,9 +303,10 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                   alt={photo.alt}
                   onError={() => handleImageError(index)}
                   onLoad={() => handleImageLoad(index)}
-                  className="h-full w-full object-cover"
+                  className="w-full object-cover md:max-h-[70vh] md:object-contain"
                   style={{
                     objectPosition: photo.focalPoint || 'top center',
+                    aspectRatio: '2/3',
                   }}
                 />
               )}
@@ -331,13 +327,13 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="w-full max-w-5xl space-y-2 md:space-y-4">
+        <div className="w-full max-w-5xl space-y-2 md:space-y-4 md:max-h-[80vh]">
           {/* Hero photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
+            className="relative h-[50vh] md:max-h-[55vh] w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
           >
             {imageErrors[0] ? (
               <div className="flex h-full w-full items-center justify-center bg-burgundy/20">
@@ -349,7 +345,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                 alt={photos[0].alt}
                 onError={() => handleImageError(0)}
                 onLoad={() => handleImageLoad(0)}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover md:h-auto md:max-h-[55vh] md:object-contain"
                 style={{
                   objectPosition: photos[0].focalPoint || 'top center',
                 }}
@@ -403,7 +399,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
       transition={{ duration: 1 }}
       className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
     >
-      <div className="grid w-full max-w-5xl grid-cols-2 gap-2 md:gap-4">
+      <div className="grid w-full grid-cols-2 gap-2 md:gap-4">
         {photos.slice(0, 2).map((photo, index) => (
           <motion.div
             key={`${photo.src}-${index}`}
@@ -411,9 +407,6 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
             className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl"
-            style={{
-              aspectRatio: '3/4',
-            }}
           >
             {imageErrors[index] ? (
               <div className="flex h-full w-full items-center justify-center bg-burgundy/20">
@@ -425,9 +418,10 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
                 alt={photo.alt}
                 onError={() => handleImageError(index)}
                 onLoad={() => handleImageLoad(index)}
-                className="h-full w-full object-cover"
+                className="w-full object-cover md:max-h-[70vh] md:object-contain"
                 style={{
                   objectPosition: photo.focalPoint || 'top center',
+                  aspectRatio: '3/4',
                 }}
               />
             )}

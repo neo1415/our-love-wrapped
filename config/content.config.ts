@@ -483,12 +483,6 @@ const contentConfig: ContentConfig = {
           duration: 5000,
         },
         {
-          type: 'photo',
-          content: '/photos/section-8/WhatsApp Image 2026-02-09 at 4.26.51 PM.jpeg',
-          altText: 'You',
-          duration: 5000,
-        },
-        {
           type: 'text',
           content: 'Continue holding my hand my woman\nand watch me conquer the world for you\nwith the other',
           duration: 6000,

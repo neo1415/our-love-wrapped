@@ -92,22 +92,22 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
   };
 
   const handleNoHover = () => {
-    // Only run away if attempts < 3
-    if (noClickAttempts < 3) {
+    // Only run away if attempts < 9
+    if (noClickAttempts < 9) {
       // Make the button run away!
       const randomX = (Math.random() - 0.5) * 200;
       const randomY = (Math.random() - 0.5) * 200;
       setNoButtonPosition({ x: randomX, y: randomY });
       setNoClickAttempts(prev => prev + 1);
       
-      // After 3 attempts, show message and transform to Yes
-      if (noClickAttempts === 2) {
+      // After 9 attempts, show message and transform to Yes
+      if (noClickAttempts === 8) {
         setTimeout(() => {
           setShowNoMessage(true);
         }, 500);
       }
     } else {
-      // After 3 attempts, clicking No acts like Yes
+      // After 9 attempts, clicking No acts like Yes
       setShowYesResponse(true);
     }
   };
@@ -231,8 +231,8 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
               
               <motion.button
                 onClick={handleNoClick}
-                onMouseEnter={noClickAttempts < 3 ? handleNoHover : undefined}
-                onTouchStart={noClickAttempts < 3 ? handleNoHover : undefined}
+                onMouseEnter={noClickAttempts < 9 ? handleNoHover : undefined}
+                onTouchStart={noClickAttempts < 9 ? handleNoHover : undefined}
                 animate={{ 
                   x: noButtonPosition.x, 
                   y: noButtonPosition.y,
@@ -243,7 +243,7 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
                   damping: 15 
                 }}
                 className={`px-12 py-4 font-heading text-2xl rounded-full shadow-lg cursor-pointer ${
-                  noClickAttempts >= 3 
+                  noClickAttempts >= 9 
                     ? 'bg-rose-gold text-dark-bg' 
                     : 'bg-cream/20 text-cream'
                 }`}
@@ -251,7 +251,7 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
                   fontSize: 'clamp(1.2rem, 4vw, 2rem)',
                 }}
               >
-                {noClickAttempts >= 3 ? 'Yes! 💕' : 'No'}
+                {noClickAttempts >= 9 ? 'Yes! 💕' : 'No'}
               </motion.button>
             </motion.div>
 

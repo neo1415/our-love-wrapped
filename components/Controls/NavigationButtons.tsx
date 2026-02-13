@@ -24,7 +24,8 @@ export default function NavigationButtons() {
   useEffect(() => {
     if (isMobile && currentSection > 0) {
       setShowButtons(false);
-    } else if (!isMobile) {
+    } else {
+      // Always show on desktop
       setShowButtons(true);
     }
   }, [isMobile, currentSection]);
@@ -102,8 +103,8 @@ export default function NavigationButtons() {
       {showButtons && (
         <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-4">
           <motion.button
-            initial={{ opacity: 0.5 }}
-            animate={{ opacity: currentSection === 0 ? 0.5 : 0 }}
+            initial={{ opacity: 0.7 }}
+            animate={{ opacity: 0.7 }}
             whileHover={{ scale: 1.1, opacity: 1 }}
             whileTap={{ scale: 0.9 }}
             onClick={(e) => {
@@ -124,8 +125,8 @@ export default function NavigationButtons() {
           </motion.button>
 
           <motion.button
-            initial={{ opacity: 0.5 }}
-            animate={{ opacity: currentSection === 0 ? 0.5 : 0 }}
+            initial={{ opacity: 0.7 }}
+            animate={{ opacity: 0.7 }}
             whileHover={{ scale: 1.1, opacity: 1 }}
             whileTap={{ scale: 0.9 }}
             onClick={(e) => {
