@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import useStoryStore from '@/lib/state/storyStore';
 import { loadContent } from '@/lib/content/contentLoader';
 import { AudioManager } from '@/lib/audio/AudioManager';
+import { getPreloadManager } from '@/lib/images/ImagePreloadManager';
+import { getNetworkAdapter } from '@/lib/images/NetworkAdapter';
 import TextSlide from './TextSlide';
 import PhotoSlide from './PhotoSlide';
 import PhotoCollage from './PhotoCollage';
@@ -31,6 +33,8 @@ export default function StoryContainer() {
   const content = useMemo(() => loadContent(), []);
   const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const audioManagerRef = useRef<AudioManager | null>(null);
+  const preloadManagerRef = useRef(getPreloadManager());
+  const networkAdapterRef = useRef(getNetworkAdapter());
   const [showVideoTransition, setShowVideoTransition] = useState(false);
   const [hasTriggeredVideo, setHasTriggeredVideo] = useState(false);
   const [showFastSlideshow, setShowFastSlideshow] = useState(false);
@@ -109,6 +113,29 @@ export default function StoryContainer() {
       audioManagerRef.current?.destroy();
     };
   }, []); // Only run once on mount
+
+  // Aggressive image preloading with priority-based loading and network awareness
+  useEffect(() => {
+    const preloadManager = preloadManagerRef.current;
+    const networkAdapter = networkAdapterRef.current;
+    
+    // Get optimal preload distance based on network
+    const preloadDistance = networkAdapter.getPreloadDistance();
+    
+    console.log(`📡 Network-aware preload distance: ${preloadDistance}`);
+    
+    // Preload images based on current position
+    preloadManager.preloadImages({
+      currentSection,
+      currentSlide,
+      sections: content.sections,
+      preloadDistance,
+    });
+
+    // Log preload stats
+    const stats = preloadManager.getStats();
+    console.log(`📊 Preload stats: ${stats.loaded} loaded, ${stats.loading} loading, ${stats.queued} queued`);
+  }, [currentSection, currentSlide, content.sections]);
 
   // Handle audio track changes
   useEffect(() => {

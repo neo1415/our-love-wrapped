@@ -133,18 +133,29 @@ function validateSections(sections: any): ValidationError[] {
     }
 
     section.slides.forEach((slide: any, slideIndex: number) => {
-      if (slide.type !== 'text' && slide.type !== 'photo') {
+      if (slide.type !== 'text' && slide.type !== 'photo' && slide.type !== 'collage') {
         errors.push({ 
           field: `sections[${sectionIndex}].slides[${slideIndex}].type`, 
-          message: 'Slide type must be "text" or "photo"' 
+          message: 'Slide type must be "text", "photo", or "collage"' 
         });
       }
 
-      if (!slide.content || typeof slide.content !== 'string') {
+      // Content is required for text and photo slides, but optional for collage slides
+      if (slide.type !== 'collage' && (!slide.content || typeof slide.content !== 'string')) {
         errors.push({ 
           field: `sections[${sectionIndex}].slides[${slideIndex}].content`, 
           message: 'Slide content is required and must be a string' 
         });
+      }
+      
+      // For collage slides, validate photos array
+      if (slide.type === 'collage') {
+        if (!Array.isArray(slide.photos) || slide.photos.length === 0) {
+          errors.push({ 
+            field: `sections[${sectionIndex}].slides[${slideIndex}].photos`, 
+            message: 'Collage slides must have a photos array with at least one photo' 
+          });
+        }
       }
 
       if (typeof slide.duration !== 'number' || slide.duration <= 0) {
