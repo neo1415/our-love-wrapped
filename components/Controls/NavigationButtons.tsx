@@ -20,15 +20,15 @@ export default function NavigationButtons() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Hide buttons after first section on mobile
+  // Hide buttons on mobile (all sections)
   useEffect(() => {
-    if (isMobile && currentSection > 0) {
+    if (isMobile) {
       setShowButtons(false);
     } else {
       // Always show on desktop
       setShowButtons(true);
     }
-  }, [isMobile, currentSection]);
+  }, [isMobile]);
 
   // Handle screen tap (left/right half)
   const handleScreenTap = (e: React.MouseEvent) => {

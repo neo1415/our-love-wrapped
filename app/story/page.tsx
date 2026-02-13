@@ -10,11 +10,16 @@ import FullScreenPhoto from '@/components/Effects/FullScreenPhoto';
 import OrientationPrompt from '@/components/Effects/OrientationPrompt';
 import BackgroundOverlay from '@/components/Effects/BackgroundOverlay';
 import BackToHomeButton from '@/components/Controls/BackToHomeButton';
+import AutoHideControls from '@/components/Controls/AutoHideControls';
 import { useEffect } from 'react';
 import useStoryStore from '@/lib/state/storyStore';
+import { usePerformanceOptimizations } from '@/lib/performance/usePerformanceOptimizations';
 
 export default function StoryPage() {
   const { reset, togglePlayPause, isPlaying } = useStoryStore();
+
+  // Apply performance optimizations
+  usePerformanceOptimizations();
 
   // Initialize story on mount
   useEffect(() => {
@@ -53,8 +58,8 @@ export default function StoryPage() {
       {/* Navigation buttons (swipe and tap zones) */}
       <NavigationButtons />
       
-      {/* Controls overlay */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 p-6">
+      {/* Controls overlay with auto-hide */}
+      <AutoHideControls className="pointer-events-none fixed inset-x-0 bottom-0 z-30 p-6">
         {/* Progress bar */}
         <div className="mb-4">
           <ProgressBar />
@@ -65,7 +70,7 @@ export default function StoryPage() {
           <PlayPauseButton />
           <MuteButton />
         </div>
-      </div>
+      </AutoHideControls>
       
       {/* Chapter menu overlay */}
       <ChapterMenu />
