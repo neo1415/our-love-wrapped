@@ -38,7 +38,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'It is truly baffling how a man can meet a miracle\nand in his humanity miss the gift\nthat was right in front of him',
-          duration: 5000,
+          duration: 10000,
         },
         {
           type: 'photo',
@@ -49,7 +49,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'But you were so *beautiful*\nand so **bright**',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'photo',
@@ -60,7 +60,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'It felt like trying to pluck\nthe sun from the sky',
-          duration: 4000,
+          duration: 6000,
         },
       ],
     },
@@ -73,7 +73,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'But when love is meant to be\nFate will find a way\nto bend the rules to make it work',
-          duration: 5000,
+          duration: 8000,
         },
         {
           type: 'photo',
@@ -84,7 +84,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'With your goofy ass expressions\nand glass skin 😂',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'photo',
@@ -125,7 +125,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'You were *something else*',
-          duration: 3000,
+          duration: 4000,
         },
         {
           type: 'photo',
@@ -151,7 +151,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'All I prayed for\nthen also what my children\nand ancestors prayed for',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'photo',
@@ -221,7 +221,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'And when I think I have gotten there\nI look at you and know\nI can never remain where I am',
-          duration: 5000,
+          duration: 9000,
         },
         {
           type: 'photo',
@@ -238,7 +238,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'She deserves the *heavens* and the *earth*',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'photo',
@@ -249,7 +249,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'And I will pluck the heavens\nand harvest the earth\nfor my **Queen**',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'collage',
@@ -295,7 +295,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'But you stuck with me\nand we made this work',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'text',
@@ -313,7 +313,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'Every moment, every second\nI spend with you\nis a taste of *paradise*',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'photo',
@@ -330,7 +330,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'The winds blow more softly\nthe sun is more beautiful',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'photo',
@@ -367,7 +367,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'My Queen, My woman\nMy Choice, My own',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'photo',
@@ -378,7 +378,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: '{{Ifunnanya m}}\n{{Asanwa}}\n{{Eyiimofe}}',
-          duration: 5000,
+          duration: 3000,
         },
         {
           type: 'text',
@@ -396,7 +396,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'You are all I could ever ask for\nin a woman',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'photo',
@@ -428,7 +428,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'Is there anything\nI would not do for you?',
-          duration: 4000,
+          duration: 5000,
         },
         {
           type: 'collage',
@@ -458,7 +458,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'And I can only spend my time\nmaking sure that you see',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'photo',
@@ -469,7 +469,7 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'Just how much of a *home*\nmy heart has become for you',
-          duration: 5000,
+          duration: 6000,
         },
         {
           type: 'photo',
@@ -485,24 +485,24 @@ const contentConfig: ContentConfig = {
         {
           type: 'text',
           content: 'Continue holding my hand my woman\nand watch me conquer the world for you\nwith the other',
-          duration: 6000,
+          duration: 7000,
         },
         {
           type: 'text',
           content: 'You are a **Queen**\nYou are **Alochukwu**',
-          duration: 5000,
+          duration: 4000,
         },
         {
           type: 'text',
           content: 'You are **mine**',
-          duration: 5000,
+          duration: 3000,
           special: 'overlay',
           backgroundPhoto: '/background/WhatsApp Image 2026-02-09 at 4.26.48 PM.webp',
         },
         {
           type: 'text',
           content: 'I Love You',
-          duration: 999999, // Very long duration so it stays visible
+          duration: 3000, // Very long duration so it stays visible
           special: 'valentine',
           backgroundPhoto: '/background/WhatsApp Image 2026-02-09 at 4.26.48 PM.webp',
         },
