@@ -37,7 +37,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'It is truly baffling how a man can meet a miracle\nand in his humanity miss the gift\nthat was right in front of him',
+          content: 'It is truly baffling how a man can meet a miracle\nand in his humanity miss the gift\nthat was right in front of him.',
           duration: 10000,
         },
         {
@@ -48,7 +48,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'But you were so *beautiful*\nand so **bright**',
+          content: 'But you were so *beautiful*\nand so **bright**.',
           duration: 5000,
         },
         {
@@ -59,7 +59,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'It felt like trying to pluck\nthe sun from the sky',
+          content: 'It felt like trying to pluck\nthe sun from the sky.',
           duration: 6000,
         },
       ],
@@ -72,7 +72,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'But when love is meant to be\nFate will find a way\nto bend the rules to make it work',
+          content: 'But when love is meant to be,\nFate will find a way\nto bend the rules to make it work.',
           duration: 8000,
         },
         {
@@ -83,7 +83,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'With your goofy ass expressions\nand glass skin 😂',
+          content: 'With your goofy ass expressions\nand glass skin. 😂',
           duration: 5000,
         },
         {
@@ -124,7 +124,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'You were *something else*',
+          content: 'You were *something else*.',
           duration: 4000,
         },
         {
@@ -135,7 +135,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'I literally didn\'t know\nwhat to do with myself',
+          content: 'I literally didn\'t know\nwhat to do with myself.',
           duration: 4000,
         },
         {
@@ -150,7 +150,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'All I prayed for\nthen also what my children\nand ancestors prayed for',
+          content: 'All I prayed for,\nthen also what my children\nand ancestors prayed for.',
           duration: 6000,
         },
         {
@@ -180,7 +180,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: '**RIP Mr. Resistance**',
+          content: '**RIP Mr. Resistance.**',
           duration: 3000,
         },
         {
@@ -191,7 +191,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: '*Not sorry* 😌',
+          content: '*Not sorry.* 😌',
           duration: 3000,
         },
       ],
@@ -204,7 +204,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'You push me to be\nthe **best version** of myself',
+          content: 'You push me to be\nthe **best version** of myself.',
           duration: 5000,
         },
         {
@@ -220,7 +220,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'And when I think I have gotten there\nI look at you and know\nI can never remain where I am',
+          content: 'And when I think I have gotten there,\nI look at you and know\nI can never remain where I am.',
           duration: 9000,
         },
         {
@@ -237,7 +237,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'She deserves the *heavens* and the *earth*',
+          content: 'She deserves the *heavens* and the *earth*.',
           duration: 5000,
         },
         {
@@ -248,7 +248,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'And I will pluck the heavens\nand harvest the earth\nfor my **Queen**',
+          content: 'And I will pluck the heavens\nand harvest the earth\nfor my **Queen**.',
           duration: 6000,
         },
         {
@@ -283,7 +283,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'Ain\'t no man as terrified\nas the man who\'s scared to lose you',
+          content: 'Ain\'t no man as terrified\nas the man who\'s scared to lose you.',
           duration: 5000,
         },
         {
@@ -294,12 +294,12 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'But you stuck with me\nand we made this work',
+          content: 'But you stuck with me,\nand we made this work.',
           duration: 5000,
         },
         {
           type: 'text',
-          content: 'There is **nothing**\nwe can\'t conquer baby',
+          content: 'There is **nothing**\nwe can\'t conquer, baby.',
           duration: 4000,
         },
       ],
@@ -312,7 +312,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'Every moment, every second\nI spend with you\nis a taste of *paradise*',
+          content: 'Every moment, every second\nI spend with you\nis a taste of *paradise*.',
           duration: 6000,
         },
         {
@@ -329,7 +329,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'The winds blow more softly\nthe sun is more beautiful',
+          content: 'The winds blow more softly,\nthe sun is more beautiful.',
           duration: 5000,
         },
         {
@@ -340,7 +340,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'And the urge to crawl\ninto your arms\nis **overwhelming**',
+          content: 'And the urge to crawl\ninto your arms\nis **overwhelming**.',
           duration: 5000,
         },
         {
@@ -366,7 +366,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'My Queen, My woman\nMy Choice, My own',
+          content: 'My Queen, My woman,\nMy Choice, My own.',
           duration: 5000,
         },
         {
@@ -377,12 +377,12 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: '{{Ifunnanya m}}\n{{Asanwa}}\n{{Eyiimofe}}',
+          content: '{{Ifunnanya m}},\n{{Asanwa}},\n{{Eyiimofe}}.',
           duration: 3000,
         },
         {
           type: 'text',
-          content: 'My **heart throb**',
+          content: 'My **heart throb**.',
           duration: 3000,
         },
       ],
@@ -395,7 +395,7 @@ const contentConfig: ContentConfig = {
       slides: [
         {
           type: 'text',
-          content: 'You are all I could ever ask for\nin a woman',
+          content: 'You are all I could ever ask for\nin a woman.',
           duration: 6000,
         },
         {
@@ -412,7 +412,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'Your *smile* lightens my heart\nand brightens my day',
+          content: 'Your *smile* lightens my heart\nand brightens my day.',
           duration: 5000,
         },
         {
@@ -442,7 +442,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'Words, pictures\nnone of these can ever\ndo you **justice**',
+          content: 'Words, pictures,\nnone of these can ever\ndo you **justice**.',
           duration: 5000,
         },
         {
@@ -457,7 +457,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'And I can only spend my time\nmaking sure that you see',
+          content: 'And I can only spend my time\nmaking sure that you see.',
           duration: 6000,
         },
         {
@@ -468,7 +468,7 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'Just how much of a *home*\nmy heart has become for you',
+          content: 'Just how much of a *home*\nmy heart has become for you.',
           duration: 6000,
         },
         {
@@ -479,29 +479,29 @@ const contentConfig: ContentConfig = {
         },
         {
           type: 'text',
-          content: 'How much I **love** you\nHow much I **adore** you',
+          content: 'How much I **love** you,\nHow much I **adore** you.',
           duration: 5000,
         },
         {
           type: 'text',
-          content: 'Continue holding my hand my woman\nand watch me conquer the world for you\nwith the other',
+          content: 'Continue holding my hand, my woman,\nand watch me conquer the world for you\nwith the other.',
           duration: 7000,
         },
         {
           type: 'text',
-          content: 'You are a **Queen**\nYou are **Alochukwu**',
+          content: 'You are a **Queen**.\nYou are **Alochukwu**.',
           duration: 4000,
         },
         {
           type: 'text',
-          content: 'You are **mine**',
+          content: 'You are **mine**.',
           duration: 3000,
           special: 'overlay',
           backgroundPhoto: '/background/WhatsApp Image 2026-02-09 at 4.26.48 PM.webp',
         },
         {
           type: 'text',
-          content: 'I Love You',
+          content: 'I Love You.',
           duration: 3000, // Very long duration so it stays visible
           special: 'valentine',
           backgroundPhoto: '/background/WhatsApp Image 2026-02-09 at 4.26.48 PM.webp',

@@ -8,10 +8,11 @@ export default function BackgroundOverlay() {
         alt="Background"
         className="absolute inset-0 h-full w-full object-cover"
         style={{
-          filter: 'brightness(0.3)',
+          filter: 'brightness(0.4)',
+          objectPosition: 'top center',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/70 via-dark-bg/70 to-dark-bg/70" />
+      <div className="absolute inset-0 bg-dark-bg/40" />
     </div>
   );
 }

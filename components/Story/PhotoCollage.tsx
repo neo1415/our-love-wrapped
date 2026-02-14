@@ -51,7 +51,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="relative w-full max-w-5xl">
+        <div className="relative w-full md:max-w-sm">
           {/* Big hero photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -133,7 +133,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="relative h-[70vh] md:max-h-[75vh] w-full max-w-4xl">
+        <div className="relative h-[70vh] md:max-h-[75vh] w-full md:max-w-sm">
           {photos.slice(0, 4).map((photo, index) => (
             <motion.div
               key={`${photo.src}-${index}`}
@@ -233,7 +233,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
         <div 
-          className="w-full max-w-5xl"
+          className="w-full md:max-w-sm"
           style={{
             columnCount: 2,
             columnGap: '8px',
@@ -327,7 +327,7 @@ export default function PhotoCollage({ photos, layout = 'intimate-duo', onComple
         transition={{ duration: 1 }}
         className="flex h-screen items-center justify-center overflow-hidden p-4 md:p-6"
       >
-        <div className="w-full max-w-5xl space-y-2 md:space-y-4 md:max-h-[80vh]">
+        <div className="w-full md:max-w-sm space-y-2 md:space-y-4 md:max-h-[80vh]">
           {/* Hero photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

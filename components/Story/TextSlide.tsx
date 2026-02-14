@@ -200,7 +200,7 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 1, delay: 3.2 }}
               className="font-body text-3xl text-cream md:text-4xl"
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.8)',
@@ -214,7 +214,7 @@ export default function TextSlide({ lines, onComplete, isPlaying, special, backg
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.6 }}
+              transition={{ duration: 1, delay: 4.2 }}
               className="flex gap-6 mt-4 relative"
             >
               <motion.button
