@@ -519,7 +519,7 @@ const contentConfig: ContentConfig = {
   finalMessage: 'I Love You',
   
   // Ice cream delivery code - CHANGE THIS TO YOUR 4-DIGIT ORDER NUMBER
-  iceCreamCode: '0000',
+  iceCreamCode: '1795',
 };
 
 export default contentConfig;
